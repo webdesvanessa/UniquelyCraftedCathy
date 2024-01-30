@@ -1,0 +1,11 @@
+/* GENERAL */
+
+main {
+    background-color: var(--color-200);
+}
+
+
+h1 {
+    padding: 2em 0;
+    text-align: center;
+}

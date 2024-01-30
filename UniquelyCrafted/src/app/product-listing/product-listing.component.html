@@ -1,0 +1,66 @@
+<div class="product">
+
+    <div class="product__header flex-row-hcenter-between">
+        <p>Moon Bag</p>
+        <div class="flex-row-vcenter">
+            <p><em>product code</em> UCMOB1</p>
+            <div class="i-button-and-popup">
+                <i (mouseenter)="Toggle(true)" (mouseleave)="Toggle(false)" class="fa-solid fa-info"></i>
+                <p *ngIf="show" class="i-popup">Use this code on your Order Form</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="product__details">
+
+        <div class="product__images">
+            <img class="product__large-img" src="../../assets/20240117_095230.jpg" alt="">
+            <!-- <div class="img-video-div">
+                <i (click)="ToggleMini()" class="fa-regular fa-circle-play"></i>
+                <div *ngIf="mini" class="mini-video-div">
+                    <video class="mini-video" controls>
+                        <source src="../../assets/temp/test_vid.mp4">
+                    </video>
+                </div>
+            </div> -->
+            <div class="product__small-images">
+                <img class="product__small-image" src="../../assets/temp/a.jpg" alt="">
+                <img class="product__small-image" src="../../assets/temp/b.jpg" alt="">
+                <img class="product__small-image" src="../../assets/temp/c.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="product__info">
+
+            <div class="flex-col">
+                <div class="product__description">
+                    <p>Moon Bag with two zips and adjustable strap.</p>
+                    <p><strong>Optional: </strong>shoulder strap.</p>
+                </div>
+                <div class="product__price">
+                    <p>R 986.00 - <em>without shoulder strap</em></p>
+                    <p>R 1 200.00 - <em>with shoulder strap</em></p>
+                </div>
+                <button (click)="ToggleVideo()" class="button-border product-video-btn">Demonstration Video <i class="fa-solid fa-play"></i></button>
+            </div>
+
+            <div class="product__colors">
+                <i class="product__color product__color-whole fa-solid fa-circle-half-stroke"></i>
+                <i class="product__color product__color-dual fa-solid fa-circle-half-stroke"></i>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div *ngIf="show_video" class="video-box flex-col-hcenter">
+        <div class="flex-row-vcenter-between">
+            <p>Demonstration Video</p>
+            <button (click)="CloseVideo()" class="button-border close-video-btn">Close <i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <video class="video-box__video" controls>
+            <source src="../../assets/temp/test_vid.mp4" type="video/mp4">
+        </video>
+    </div>
+
+</div>

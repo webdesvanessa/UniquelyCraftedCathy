@@ -1,0 +1,238 @@
+img {
+    max-width: 300px;
+    height: 100%;
+}
+
+
+
+
+/* PRODUCT */
+
+.product {
+    margin: 4em 0;
+    background-color: var(--color-100);
+    border: solid 0.15em var(--color-900);
+}
+
+
+/* PRODUCT HEADER */
+
+.product__header {
+    padding: 1em 2em;
+    color: var(--color-100);
+    background-color: var(--color-900);
+}
+
+.product__header p {
+    font-size: var(--fs-600);
+}
+
+.product__header em {
+    font-size: var(--fs-400);
+}
+
+
+.product__header .i-button-and-popup {
+    position: relative;
+}
+
+.product__header i {
+    width: 1em;
+    height: 1em;
+    margin: 0 0 0 1em;
+    padding: 0.5em;
+    color: var(--color-200);
+    font-size: var(--fs-400);
+    text-align: center;
+    border: solid 2px var(--color-200);
+    border-radius: 100%;
+    box-shadow: var(--button-box-shadow-t);
+    transition: box-shadow var(--transition-time);
+}
+    .product__header i:hover {
+        box-shadow: var(--button-box-shadow-l);
+    }
+
+.product__header .i-popup {
+    width: max-content;
+    margin-bottom: 2.5em;
+    padding: 0.75em 1em;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    color: var(--color-900);
+    font-size: var(--fs-400);
+    font-family: var(--ff-display-sans);
+    background-color: var(--color-100);
+    border: solid 2px var(--color-900);
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 0;
+}
+
+
+/* PRODUCT DETAILS */
+
+.product__details {
+    padding: 1em;
+    display: flex;
+    gap: 2em;
+    font-family: var(--ff-display-sans);
+
+    /* background-color: lightblue; */
+}
+
+
+/* PRODUCT IMAGES */
+
+.product__images {
+    /* padding: 0.5em; */
+    display: flex;
+    gap: 0.25em;
+    background-color: var(--color-900);
+    border: solid 0.25em var(--color-900);
+}
+
+.img-video-div {
+    max-width: fit-content;
+    max-height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.img-video-div i {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    color: var(--color-100);
+    font-size: var(--fs-900);
+    transition: color var(--transition-time);
+    z-index: 1;
+}
+    .img-video-div i:hover {
+        cursor: pointer;
+        color: var(--color-900);
+    }
+
+.mini-video-div {
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-900);
+}
+
+.mini-video {
+    max-width: 300px;
+}
+
+.product__small-images {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+}
+
+.product__small-image {
+    max-width: 100px;
+}
+
+
+/* PRODUCT INFO */
+
+.product__info {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4em;
+
+    /* background-color: lightgreen; */
+}
+
+.product__info > div {
+    gap: 2em;
+}
+
+.product__description p {
+    font-size: var(--fs-500);
+}
+
+.product__price p {
+    font-size: var(--fs-600);
+}
+
+.product-video-btn {
+    max-width: fit-content;
+    padding: 0.45em 0.85em;
+    color: var(--color-900);
+    border: solid 1px var(--color-900);
+    box-shadow: var(--button-box-shadow-t);
+    transition: box-shadow var(--transition-time);
+}
+    .product-video-btn:hover {
+        box-shadow: var(--button-box-shadow-d);
+    }
+
+.product-video-btn i {
+    margin: 0 0 0 0.25em;
+    color: var(--color-900);
+}
+
+
+.product__colors {
+    display: flex;
+    flex-direction: column;
+}
+
+.product__color {
+    margin: 0.15em;
+    font-size: 4rem;
+    border-radius: 100%;
+}
+
+.product__color-whole {
+    color: tan;
+    background-color: tan;
+}
+
+.product__color-dual {
+    color: tan;
+    background-color: black;
+}
+
+
+/* PRODUCT VIDEO */
+
+.video-box {
+    padding: 1em 2em;
+    color: var(--color-100);
+    background-color: var(--color-900);
+}
+    .video-box > div:first-of-type {
+        width: 100%;
+    }
+
+.video-box p {
+    font-size: var(--fs-600);
+}
+
+.close-video-btn {
+    color: var(--color-100);
+    font-size: var(--fs-600);
+    font-family: var(--ff-display-serif);
+    border-color: var(--color-100);
+}
+
+.close-video-btn i {
+    margin: 0;
+    padding: 0;
+}
+
+.video-box__video {
+    max-height: 400px;
+    margin-top: 2em;
+    border: solid 1px var(--color-100);
+}
