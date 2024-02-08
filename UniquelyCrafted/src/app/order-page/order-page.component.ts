@@ -1,17 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { SanityService } from '../sanity.service';
 
 @Component({
   selector: 'app-order-page',
   templateUrl: './order-page.component.html',
   styleUrl: './order-page.component.css'
 })
-export class OrderPageComponent {
-  clickMessage = '';
+export class OrderPageComponent implements OnInit {
+  
+  content: any;
 
-  show = false;
+  query = '*[_type=="product_listing"]{product_name, product_category->{category_name}}';
 
-  Toggle () {
-    console.log(this.show);
-    this.show = !this.show;
+  constructor(private sanityService: SanityService) {}
+
+  ngOnInit(): void {
+    this.sanityService.getClient().fetch(this.query).then((data) => {
+      this.content = data;
+      console.log(this.content);
+    });
   }
+
 }

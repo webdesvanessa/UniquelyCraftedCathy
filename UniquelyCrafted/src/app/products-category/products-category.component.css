@@ -15,15 +15,14 @@ h2 {
 /* PRODUCTS CATEGORY */
 
 .products__category {
-    margin-bottom: 8em;
-    /* background-color: var(--color-200); */
-    /* background-color: var(--color-900-t);
-    border-radius: 1.5rem; */
+    width: 80%;
+    margin: 0 auto;
 }
 
 .category-header {
+    margin-top: 8em;
     padding: 1em 2em;
-    /* color: var(--color-900); */
+    text-align: center;
     border-top: solid 2px var(--color-900);
     border-bottom: solid 2px var(--color-900);
 }

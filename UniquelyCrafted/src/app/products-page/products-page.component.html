@@ -1,12 +1,20 @@
 <main>
 
-    <h1>Our Products</h1>
+    <div class="category-nav">
+        <a routerLink="/products" fragment="Our Products"><h1 id="Our Products">Our Products</h1></a>
+        <ul class="category__nav-list flex-row">
+            <li class="category__nav-item"><a routerLink="/products" fragment="Bags" class="category__nav-link">Bags</a></li>
+            <li class="category__nav-item"><a routerLink="/products" fragment="Pouches" class="category__nav-link">Pouches</a></li>
+            <li class="category__nav-item"><a routerLink="/products" fragment="Mens Wallets" class="category__nav-link">Mens Wallets</a></li>
+            <li class="category__nav-item"><a routerLink="/products" fragment="Belts" class="category__nav-link">Belts</a></li>
+            <li class="category__nav-item"><a routerLink="/products" fragment="Travel Wallets" class="category__nav-link">Travel Wallets</a></li>
+            <li class="category__nav-item"><a routerLink="/products" fragment="Ladies Wallets" class="category__nav-link">Ladies Wallets</a></li>
+        </ul>
+    </div>
 
     <section class="products">
 
-        <app-products-category></app-products-category>
-        
-        <app-products-category></app-products-category>
+        <app-products-category *ngFor="let category of categories" [categoryData]="category"></app-products-category>
 
     </section>
 

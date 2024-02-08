@@ -1,20 +1,24 @@
 <div class="product">
 
     <div class="product__header flex-row-hcenter-between">
-        <p>Moon Bag</p>
+        <p>{{listingData.product_name}}</p>
         <div class="flex-row-vcenter">
-            <p><em>product code</em> UCMOB1</p>
+            <p><em>product code</em> {{listingData.product_code}}</p>
             <div class="i-button-and-popup">
                 <i (mouseenter)="Toggle(true)" (mouseleave)="Toggle(false)" class="fa-solid fa-info"></i>
-                <p *ngIf="show" class="i-popup">Use this code on your Order Form</p>
+                <p *ngIf="show" class="i-popup">Use the codes on your Order Form</p>
             </div>
         </div>
     </div>
 
-    <div class="product__details">
+    <div class="product__main">
 
         <div class="product__images">
-            <img class="product__large-img" src="../../assets/20240117_095230.jpg" alt="">
+            <div class="product__large-img">
+                <!-- <img [className]="listingData.CONSTRAINT" [src]="listingData.MAIN_IMG" alt=""> -->
+                <!-- <div [className]="listingData.CONSTRAINT"></div> -->
+                <div class="large-img" [style.background-image]="makeUrl(listingData.MAIN_IMG)"></div>
+            </div>
             <!-- <div class="img-video-div">
                 <i (click)="ToggleMini()" class="fa-regular fa-circle-play"></i>
                 <div *ngIf="mini" class="mini-video-div">
@@ -24,31 +28,48 @@
                 </div>
             </div> -->
             <div class="product__small-images">
-                <img class="product__small-image" src="../../assets/temp/a.jpg" alt="">
-                <img class="product__small-image" src="../../assets/temp/b.jpg" alt="">
-                <img class="product__small-image" src="../../assets/temp/c.jpg" alt="">
+                <img *ngFor="let image of listingData.IMAGES" class="product__small-image" [src]="image" alt="">
             </div>
         </div>
 
         <div class="product__info">
 
-            <div class="flex-col">
+            <div class="product__details">
                 <div class="product__description">
-                    <p>Moon Bag with two zips and adjustable strap.</p>
-                    <p><strong>Optional: </strong>shoulder strap.</p>
+                    <p>{{listingData.product_description.description}}</p>
+                    <p *ngIf="listingData.product_description.optional"><strong>Optional: </strong>{{listingData.product_description.optional}}</p>
+                    <p *ngIf="listingData.custom_material"><em>Material can be added in {{listingData.custom_material.customizable_component}} on client request.</em></p>
+                </div>
+                <div class="product__size">
+                    <p>{{listingData.product_size}}</p>
                 </div>
                 <div class="product__price">
-                    <p>R 986.00 - <em>without shoulder strap</em></p>
-                    <p>R 1 200.00 - <em>with shoulder strap</em></p>
+                    <p *ngFor="let price of listingData.PRICES">{{price.price_description}} <strong>R{{price.price_amount}}.00</strong></p>
                 </div>
                 <button (click)="ToggleVideo()" class="button-border product-video-btn">Demonstration Video <i class="fa-solid fa-play"></i></button>
             </div>
 
-            <div class="product__colors">
-                <i class="product__color product__color-whole fa-solid fa-circle-half-stroke"></i>
-                <i class="product__color product__color-dual fa-solid fa-circle-half-stroke"></i>
+            <div class="product__materials">
+                <div class="product__colors">
+                    <div *ngFor="let colour of listingData.COLOURS" class="color-pattern-group">
+                        <i [style.background-color]="colour.colour_hex" [style.color]="colour.colour_hex" class="product__color fa-solid fa-circle-half-stroke"></i>
+                        <p class="color-pattern-code"><em>Code: {{colour.colour_code}}</em></p>
+                    </div>
+                    <div *ngFor="let two_tone of listingData.TWO_TONE" class="color-pattern-group">
+                        <i [style.background-color]="two_tone.TWO.colour_hex" [style.color]="two_tone.ONE.colour_hex" class="product__color fa-solid fa-circle-half-stroke"></i>
+                        <p class="color-pattern-code"><em>Code: {{two_tone.two_tone_code}}</em></p>
+                    </div>
+                </div>
+                <div class="product__patterns">
+                    <div *ngFor="let pattern of listingData.PATTERNS" class="color-pattern-group">
+                        <div [style.background-image]="makeUrl(pattern.IMG)" class="product__patterns-img"></div>
+                        <p class="color-pattern-code"><em>Code: {{pattern.pattern_code}}</em></p>
+                    </div>
+                </div>
             </div>
 
+            <!-- <a [href]="listingData.product_video">video</a> -->
+            
         </div>
 
     </div>
@@ -58,9 +79,14 @@
             <p>Demonstration Video</p>
             <button (click)="CloseVideo()" class="button-border close-video-btn">Close <i class="fa-solid fa-xmark"></i></button>
         </div>
-        <video class="video-box__video" controls>
+        <!-- <video class="video-box__video" controls>
             <source src="../../assets/temp/test_vid.mp4" type="video/mp4">
-        </video>
+        </video> -->
+        <iframe width="560" height="315" [src]="sanitize(listingData.product_video)" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
 
 </div>
+
+<!-- <iframe width="560" height="315" style="border: solid 2px red;" [src]="sanitize(listingData.product_video)" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/em22l6aKjRE?si=w_DhndHKjR9aM6T_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->

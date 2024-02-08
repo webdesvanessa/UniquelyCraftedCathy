@@ -1,16 +1,20 @@
-<div class="products__category">
+<div *ngIf="categoryData.PRODUCTS.length > 0" [id]="categoryData.category_name" class="products__category">
+    <div class="category-header">
+        <h2>{{categoryData.category_name}}</h2>
+    </div>
+    <!-- <p *ngFor="let prod of categoryData.PRODUCTS">{{prod}}</p> -->
+
+    <app-product-listing *ngFor="let listing of categoryData.PRODUCTS" [listingData]="listing"></app-product-listing>
+</div>
+
+
+
+
+
+<!-- <div *ngIf="listings" [id]="categoryData.category_name" class="products__category">
     <div class="category-header flex-row-vcenter-between">
-        <h2>Pattern Belts</h2>
-        <ul class="category-header__nav-list flex-row">
-            <li class="category-header__nav-item"><a href="" class="category-header__nav-link">Moon Bags</a></li>
-            <li class="category-header__nav-item"><a href="" class="category-header__nav-link">Ladies Wallets</a></li>
-            <li class="category-header__nav-item"><a href="" class="category-header__nav-link">Mens Wallets</a></li>
-            <li class="category-header__nav-item"><a href="" class="category-header__nav-link">Pouches</a></li>
-            <li class="category-header__nav-item"><a href="" class="category-header__nav-link">Travel Wallets</a></li>
-        </ul>
+        <h2>{{categoryData.category_name}}</h2>
     </div>
 
-    <app-product-listing></app-product-listing>
-    <app-product-listing></app-product-listing>
-    <app-product-listing></app-product-listing>
-</div>
+    <app-product-listing *ngFor="let listing of listings" [listingData]="listing"></app-product-listing>
+</div> -->
