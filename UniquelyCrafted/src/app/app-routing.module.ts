@@ -6,10 +6,10 @@ import { ProductsPageComponent } from './products-page/products-page.component';
 import { OrderPageComponent } from './order-page/order-page.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomePageComponent },
-  { path: 'products', component: ProductsPageComponent },
-  { path: 'order', component: OrderPageComponent },
+  // { path: '', redirectTo: '/home', pathMatch: 'full' },
+  // { path: 'home', component: HomePageComponent },
+  // { path: 'products', component: ProductsPageComponent },
+  // { path: 'order', component: OrderPageComponent },
 ];
 
 @NgModule({
