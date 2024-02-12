@@ -1,7 +1,0 @@
-import productListing from "./product-listing"
-import category from "./category"
-import colour from "./colour"
-import twoTone from "./two-tone"
-import pattern from "./pattern"
-
-export const schemaTypes = [productListing, category, colour, twoTone, pattern]
