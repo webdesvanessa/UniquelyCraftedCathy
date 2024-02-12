@@ -1,0 +1,31 @@
+/* HERO */
+
+.hero {
+    padding: 7.5em 10em;
+    margin-bottom: 8em;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.hero__blurb {
+    width: 30%;
+    padding: 4em;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.hero__blurb p {
+    color: var(--color-100);
+    font-size: var(--fs-800);
+}
+
+.hero__blurb a {
+    margin-top: 2em;
+    color: var(--color-100);
+    font-size: var(--fs-600);
+    background-color: var(--color-900-t);
+}

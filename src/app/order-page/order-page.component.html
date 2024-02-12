@@ -1,0 +1,13 @@
+<div *ngIf="content" style="background-color: white;">
+    <h1>Sanity Content:</h1>
+    <div *ngFor="let c of content">
+        {{c}}
+        <p>{{c.product_name}}</p>
+        <p>CATEGORY: {{c.product_category.category_name}}</p>
+        <p>{{c.product_code}}</p>
+        <p>{{c.product_size}}</p>
+        <p>{{c.product_description}}</p>
+        <p>{{c.product_colour}}</p>
+        <p>{{c.product_price}}</p>
+    </div>
+</div>
