@@ -1,0 +1,20 @@
+<div *ngIf="categoryData.PRODUCTS.length > 0" [id]="categoryData.category_name" class="products__category">
+    <div class="category-header">
+        <h2>{{categoryData.category_name}}</h2>
+    </div>
+    <!-- <p *ngFor="let prod of categoryData.PRODUCTS">{{prod}}</p> -->
+
+    <app-product-listing *ngFor="let listing of categoryData.PRODUCTS" [listingData]="listing"></app-product-listing>
+</div>
+
+
+
+
+
+<!-- <div *ngIf="listings" [id]="categoryData.category_name" class="products__category">
+    <div class="category-header flex-row-vcenter-between">
+        <h2>{{categoryData.category_name}}</h2>
+    </div>
+
+    <app-product-listing *ngFor="let listing of listings" [listingData]="listing"></app-product-listing>
+</div> -->
