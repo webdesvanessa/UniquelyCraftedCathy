@@ -57,7 +57,6 @@ export default {
             of: [
                 {
                     type: "block",
-                    styles: []
                 }
             ]
         },
@@ -69,7 +68,6 @@ export default {
             of: [
                 {
                     type: "block",
-                    styles: []
                 }
             ]
         }

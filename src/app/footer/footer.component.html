@@ -5,14 +5,14 @@
 
             <div class="footer__about container flex-col">
                 <img class="logo-l" [src]="logo" alt="">
-                <a class="a-button-border" href="">ORDER NOW</a>
+                <a class="a-button-border" routerLink="/order">ORDER NOW</a>
             </div>
 
             <div class="container flex-col">
                 <div class="footer__links flex-col">
                     <h6>PRODUCTS</h6>
                     <ul class="footer__list">
-                        <li *ngFor="let category of categoryName" class="footer__item"> <a class="footer__link" href="">{{category.category_name}}</a> </li>
+                        <li *ngFor="let category of categoryName" class="footer__item"> <a class="footer__link" routerLink="/products" [fragment]="category.category_name">{{category.category_name}}</a> </li>
                     </ul>
                 </div>
 
@@ -22,20 +22,20 @@
                         <i class="fa-solid fa-location-dot"></i>
                         <p>{{contact_data.address}}</p>
                     </div>
-                    <div class="flex-row">
+                    <ul class="flex-row">
                         <i class="fa-solid fa-phone"></i>
-                        <p *ngFor="let number of contact_data.PHONE">{{number}}</p>
-                    </div>
-                    <div class="flex-row">
+                        <li *ngFor="let number of contact_data.PHONE">{{number}}</li>
+                    </ul>
+                    <ul class="flex-row">
                         <i class="fa-brands fa-whatsapp"></i>
-                        <p *ngFor="let number of contact_data.WHATSAPP"> <a [href]="whatsapp_number(number)" target="_blank">{{number}}</a> </p>
-                    </div>
-                    <div class="flex-row">
+                        <li *ngFor="let number of contact_data.WHATSAPP"> <a class="footer__link" [href]="whatsapp_number(number)" target="_blank">{{number}}</a> </li>
+                    </ul>
+                    <ul class="flex-row">
                         <i class="fa-regular fa-envelope"></i>
-                        <p *ngFor="let email of contact_data.EMAIL"> <a [href]="email_mailto(email)" target="_blank">{{email}}</a> </p>
-                    </div>
-                    <div class="flex-row">
-                        <p *ngFor="let social of contact_data.SOCIAL_LINKS"><i [className]="strip_icon(social.icon)"></i> <a [href]="social.link" target="_blank">{{social.handle}}</a></p>
+                        <li *ngFor="let email of contact_data.EMAIL"> <a class="footer__link" [href]="email_mailto(email)" target="_blank">{{email}}</a> </li>
+                    </ul>
+                    <div class="flex-col">
+                        <p *ngFor="let social of contact_data.SOCIAL_LINKS"><i [className]="strip_icon(social.icon)"></i> <a class="footer__link" [href]="social.link" target="_blank">{{social.handle}}</a></p>
                     </div>
                 </div>
             </div>
@@ -53,8 +53,8 @@
             </div>
         </div>
         <div class="flex-col">
-            <a href="">Terms & Conditions</a>
-            <a href="">Privacy Policy</a>
+            <p> <a class="footer__link" routerLink="/terms">Terms & Conditions</a> </p>
+            <p> <a class="footer__link" routerLink="/privacy">Privacy Policy</a> </p>
         </div>
     </div>
 

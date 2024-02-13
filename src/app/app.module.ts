@@ -12,6 +12,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { ProductListingComponent } from './product-listing/product-listing.component';
 import { ProductsCategoryComponent } from './products-category/products-category.component';
 import { OrderPageComponent } from './order-page/order-page.component';
+import { PrivacyComponent } from './privacy/privacy.component';
+import { TermsComponent } from './terms/terms.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { OrderPageComponent } from './order-page/order-page.component';
     ProductListingComponent,
     ProductsCategoryComponent,
     OrderPageComponent,
+    PrivacyComponent,
+    TermsComponent,
   ],
   imports: [
     BrowserModule,

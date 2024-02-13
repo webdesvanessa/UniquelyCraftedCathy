@@ -65,6 +65,16 @@ footer :is(p, a) {
     font-family: var(--ff-display-sans);
 }
 
+.footer__links :is(p + p) {
+    margin-left: 0.5em;
+}
+
+.footer__links :is(p + p)::before {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+}
+
 
 .bg-img {
     padding: 8em;
@@ -95,4 +105,21 @@ footer :is(p, a) {
 
 .copyright .flex-col {
     gap: 0.5em;
+}
+
+
+
+
+#contact ul li {
+    margin-left: 1em;
+    list-style-type: disc;
+    list-style-position: inside;
+    color: var(--color-100);
+    font-size: var(--fs-500);
+    font-family: var(--ff-display-sans);
+}
+
+#contact ul li:first-of-type {
+    margin-left: 0;
+    list-style-type: none;
 }
