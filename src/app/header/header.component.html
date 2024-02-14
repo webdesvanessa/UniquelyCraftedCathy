@@ -1,7 +1,10 @@
 <header>
 
-    <nav class="flex-row-hcenter-between">
-      <img class="logo-m" [src]="logo" alt="">
+    <nav>
+      <div class="nav-aside">
+        <img class="logo-m" [src]="logo" alt="">
+        <i class="nav-button fa-solid fa-bars"></i>
+      </div>
       
       <ul class="nav-links">
         <li> <a class="nav-link" routerLink="/home">HOME</a> </li>
@@ -10,6 +13,7 @@
         <li> <a class="nav-link" routerLink="/order">ORDER</a> </li>
         <li> <a class="nav-link" routerLink="/home" fragment="contact">CONTACT</a> </li>
       </ul>
+
     </nav>
 
 </header>

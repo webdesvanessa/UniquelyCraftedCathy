@@ -1,4 +1,4 @@
-<div class="product">
+<div class="product" *ngIf="listingData">
 
     <div class="product__header flex-row-hcenter-between">
         <p>{{listingData.product_name}}</p>
@@ -15,18 +15,9 @@
 
         <div class="product__images">
             <div class="product__large-img">
-                <!-- <img [className]="listingData.CONSTRAINT" [src]="listingData.MAIN_IMG" alt=""> -->
-                <!-- <div [className]="listingData.CONSTRAINT"></div> -->
-                <div class="large-img" [style.background-image]="makeUrl(listingData.MAIN_IMG)"></div>
+                <!-- <div class="large-img" [style.background-image]="makeUrl(listingData.MAIN_IMG)"></div> -->
+                <img class="large-img" [src]="listingData.MAIN_IMG">
             </div>
-            <!-- <div class="img-video-div">
-                <i (click)="ToggleMini()" class="fa-regular fa-circle-play"></i>
-                <div *ngIf="mini" class="mini-video-div">
-                    <video class="mini-video" controls>
-                        <source src="../../assets/temp/test_vid.mp4">
-                    </video>
-                </div>
-            </div> -->
             <div class="product__small-images">
                 <img *ngFor="let image of listingData.IMAGES" class="product__small-image" [src]="image" alt="">
             </div>
@@ -67,8 +58,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- <a [href]="listingData.product_video">video</a> -->
             
         </div>
 
@@ -79,14 +68,7 @@
             <p>Demonstration Video</p>
             <button (click)="CloseVideo()" class="button-border close-video-btn">Close <i class="fa-solid fa-xmark"></i></button>
         </div>
-        <!-- <video class="video-box__video" controls>
-            <source src="../../assets/temp/test_vid.mp4" type="video/mp4">
-        </video> -->
         <iframe width="560" height="315" [src]="sanitize(listingData.product_video)" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
 
 </div>
-
-<!-- <iframe width="560" height="315" style="border: solid 2px red;" [src]="sanitize(listingData.product_video)" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
-
-<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/em22l6aKjRE?si=w_DhndHKjR9aM6T_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->

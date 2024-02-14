@@ -20,7 +20,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.sanityService.getClient().fetch(this.logo_query).then((data) => {
       this.logo = data[0]["img"];
-      console.log(this.logo);
     });
   }
 }

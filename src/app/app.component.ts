@@ -21,7 +21,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.sanityService.getClient().fetch(this.categories_query).then((data) => {
       this.categories = data;
-      console.log(this.categories);
     });
   }
 }

@@ -1,6 +1,6 @@
-<footer>
+<footer *ngIf="contact_data">
 
-    <div class="bg-img" [style.background-image]="makeUrl(footer_image)">
+    <div class="bg-img" *ngIf="footer_image" [style.background-image]="makeUrl(footer_image)">
         <div class="transparent-rounded-div flex-row">
 
             <div class="footer__about container flex-col">

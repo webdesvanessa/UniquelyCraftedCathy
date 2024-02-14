@@ -1,4 +1,4 @@
-<main>
+<main *ngIf="terms_data">
 
     <div>
         <ng-container *ngFor="let terms of terms_data" [ngSwitch]="terms.style">

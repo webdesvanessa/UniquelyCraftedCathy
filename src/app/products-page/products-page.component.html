@@ -1,7 +1,10 @@
-<main>
+<main *ngIf="categories">
 
     <div class="category-nav">
-        <a routerLink="/products" fragment="Our Products"><h1 id="Our Products">Our Products</h1></a>
+        <div class="category-nav-aside">
+            <a routerLink="/products" fragment="Our Products"><h1 id="Our Products">Our Products</h1></a>
+            <i class="fa-solid fa-bars"></i>
+        </div>
         <ul class="category__nav-list flex-row">
             <li *ngFor="let category of categories" class="category__nav-item"><a routerLink="/products" [fragment]="category.category_name" class="category__nav-link">{{category.category_name}}</a></li>
         </ul>

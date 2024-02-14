@@ -1,7 +1,7 @@
 <app-hero></app-hero>
 
 
-<main>
+<main *ngIf="home_data">
 
     <section id="features" class="features">
       <div class="two-col-grid">
@@ -13,7 +13,7 @@
     </section>
   
     
-    <section id="story" class="story" [style.background-image]="makeUrl(story_img)">
+    <section *ngIf="story_img" id="story" class="story" [style.background-image]="makeUrl(story_img)">
         <div class="transparent-rounded-div">
             <h2>{{home_data.story.title}}</h2>
             <p *ngFor="let par of home_data.story.STORY">{{par}}</p>
@@ -21,9 +21,9 @@
     </section>
     
   
-    <section id="product-categories" class="product-categories three-col-grid">
+    <section *ngIf="category_data" id="product-categories" class="product-categories three-col-grid">
       <div *ngFor="let cat of category_data" class="category">
-          <div>
+          <div class="category__img">
               <img [src]="cat.category_image" alt="">
           </div>
           <p>{{cat.category_name}}</p>

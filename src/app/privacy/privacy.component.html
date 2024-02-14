@@ -1,4 +1,4 @@
-<main>
+<main *ngIf="privacy_data">
 
     <div>
         <ng-container *ngFor="let policy of privacy_data" [ngSwitch]="policy.style">
