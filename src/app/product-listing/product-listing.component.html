@@ -68,7 +68,7 @@
             <p>Demonstration Video</p>
             <button (click)="CloseVideo()" class="button-border close-video-btn">Close <i class="fa-solid fa-xmark"></i></button>
         </div>
-        <iframe width="560" height="315" [src]="sanitize(listingData.product_video)" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe class="video-box__video" [src]="sanitize(listingData.product_video)" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
 
 </div>

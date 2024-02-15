@@ -33,7 +33,6 @@ export class FooterComponent implements OnInit {
       this.contact_data = data["CONTACT"][0];
       this.footer_image = data["IMAGE"][0]["footer"];
       this.logo = data["IMAGE"][0]["logo"];
-      // console.log("footer data: ", this.logo);
     });
   }
 

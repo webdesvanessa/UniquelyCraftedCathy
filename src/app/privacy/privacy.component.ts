@@ -20,7 +20,6 @@ export class PrivacyComponent implements OnInit {
   ngOnInit(): void {
     this.sanityService.getClient().fetch(this.privacy_query).then((data) => {
       this.privacy_data = data[0]["POLICY"];
-      console.log(this.privacy_data);
     });
   }
 }

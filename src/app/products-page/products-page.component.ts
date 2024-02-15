@@ -8,6 +8,13 @@ import { SanityService } from '../sanity.service';
   styleUrl: './products-page.component.css'
 })
 export class ProductsPageComponent implements OnInit {
+
+  toggle = false;
+  
+  ToggleNav() {
+    this.toggle = !this.toggle;
+  }
+
   // fetch content from sanity using the sanity service:
   categories: any;
 
@@ -18,7 +25,6 @@ export class ProductsPageComponent implements OnInit {
   ngOnInit(): void {
     this.sanityService.getClient().fetch(this.categories_query).then((data) => {
       this.categories = data;
-      console.log(this.categories);
     });
   }
 }

@@ -20,7 +20,6 @@ export class HeroComponent implements OnInit {
   ngOnInit(): void {
     this.sanityService.getClient().fetch(this.hero_query).then((data) => {
       this.hero_img = data[0]["img"];
-      // console.log("HERO IMG: ", data[0]["img"])
     });
   }
 

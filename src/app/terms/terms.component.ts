@@ -20,7 +20,6 @@ export class TermsComponent {
     ngOnInit(): void {
       this.sanityService.getClient().fetch(this.terms_query).then((data) => {
         this.terms_data = data[0]["TERMS"];
-        console.log(this.terms_data);
       });
     }
 }

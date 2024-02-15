@@ -24,7 +24,6 @@ export class HomePageComponent implements OnInit {
       this.home_data = data["HOMEPAGE"][0];
       this.category_data = data["CATEGORIES"];
       this.story_img = data["STORY-IMAGE"][0]["img"];
-      // console.log("DATA: ", this.story_img);
     });
   }
 

@@ -9,6 +9,12 @@ import { SanityService } from '../sanity.service';
 })
 export class HeaderComponent implements OnInit {
 
+  toggle = false;
+  
+  ToggleNav() {
+    this.toggle = !this.toggle;
+  }
+  
   // FETCH DATA FROM SANITY CMS:
 
   logo: any;

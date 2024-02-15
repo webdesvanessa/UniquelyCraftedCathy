@@ -31,6 +31,7 @@ footer :is(p, a) {
 .footer__about .a-button-border {
     align-self: center;
     font-size: var(--fs-700);
+    text-align: center;
     background-color: var(--color-900);
 }
 
@@ -179,4 +180,38 @@ footer :is(p, a) {
     .copyright {
         padding: 2em;
     }
+}
+
+
+
+
+/* 500 PX */ 
+
+@media (max-width: 500px) {
+
+    .copyright {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+    }
+
+    .copyright > div:last-of-type {
+        flex-direction: row;
+        gap: 2em;
+    }
+    
+}
+
+
+
+
+/* 400 PX */ 
+
+@media (max-width: 400px) {
+
+    .transparent-rounded-div {
+        padding: 2em;
+    }
+    
 }

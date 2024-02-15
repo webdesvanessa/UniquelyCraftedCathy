@@ -18,7 +18,6 @@ export class OrderPageComponent implements OnInit {
   ngOnInit(): void {
     this.sanityService.getClient().fetch(this.query).then((data) => {
       this.content = data;
-      console.log(this.content);
     });
   }
 

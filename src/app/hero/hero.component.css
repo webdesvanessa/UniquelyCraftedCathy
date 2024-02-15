@@ -70,3 +70,32 @@
     }
 
 }
+
+
+
+
+/* 500 PX */
+
+@media (max-width: 500px) {
+
+    .hero__blurb {
+        padding: 3em;
+    }
+}
+
+
+
+
+/* 400 PX */
+
+@media (max-width: 400px) {
+
+    .hero {
+        padding: 2em;
+    }
+
+    .hero__blurb {
+        padding: 2em;
+    }
+    
+}
