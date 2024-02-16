@@ -24,7 +24,7 @@
     <section *ngIf="category_data" id="product-categories" class="product-categories three-col-grid">
       <div *ngFor="let cat of category_data" class="category">
           <div class="category__img">
-              <img [src]="cat.category_image" alt="">
+              <a routerLink="/products"> <img [src]="cat.category_image" alt=""> </a>
           </div>
           <p>{{cat.category_name}}</p>
       </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DatePipe } from '@angular/common';
+import { Router, NavigationEnd } from '@angular/router';
+import { DatePipe, ViewportScroller } from '@angular/common';
 
 import { SanityService } from '../sanity.service';
 
@@ -11,6 +12,25 @@ import { SanityService } from '../sanity.service';
 })
 export class FooterComponent implements OnInit {
   copyright_year: number = Date.now();
+
+
+  fragment: any;
+  interval: any;
+
+  constructor(private router: Router, private vpScroller: ViewportScroller, private sanityService: SanityService) {
+    // this.router.events.subscribe(event => {
+    //   if (event instanceof NavigationEnd) {
+    //     console.log("navigation end");
+    //     this.fragment = event.urlAfterRedirects.split('#')[1];
+    //     if (this.fragment) {
+    //       console.log("fragment");
+    //       this.interval = setInterval(() => {
+    //         this.navigateFragment();
+    //       }, 100);
+    //     }
+    //   }
+    // });
+  }
 
   
   // GET DATA FROM PARENT:
@@ -25,8 +45,6 @@ export class FooterComponent implements OnInit {
   logo: any;
   
   contact_query = '{"CONTACT":*[_type == "contact_details"]{address, "PHONE": phone_number[], "WHATSAPP": whatsapp_number[], "EMAIL": email_address[], "SOCIAL_LINKS": social_links[]{platform, handle, link, icon}, designed_by{designer_name, designer_contact[]{method, icon, link}}},"IMAGE":*[_type == "site_images"]{"footer": footer_image.asset->url, "logo": logo.asset->url} }'
-
-  constructor(private sanityService: SanityService) {}
 
   ngOnInit(): void {
     this.sanityService.getClient().fetch(this.contact_query).then((data) => {
@@ -54,4 +72,15 @@ export class FooterComponent implements OnInit {
   makeUrl(link:string) {
     return "url(" + link + ")";
   }
+
+  // // SCROLL TO FRAGMENT
+  // navigateFragment() {
+  //   const element = document.querySelector('#' + this.fragment);
+  //   if (element) {
+  //     this.vpScroller.scrollToAnchor(this.fragment);
+  //     console.log("element")
+  //     clearInterval(this.interval);
+  //   }
+  // }
+
 }
